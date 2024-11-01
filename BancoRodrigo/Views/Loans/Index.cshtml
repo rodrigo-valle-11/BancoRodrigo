@@ -1,0 +1,32 @@
+model IEnumerable<BancoRodrigo.Models.Loan>
+
+<h2>Préstamos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Monto</th>
+            <th>Tasa de Interés</th>
+            <th>Días de Duración</th>
+            <th>Método de Pago</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Fin</th>
+        </tr>
+    </thead>
+    <tbody>
+        foreach (var loan in Model)
+        {
+            <tr>
+                <td>loan.Id</td>
+                <td>loan.Amount</td>
+                <td>loan.InterestRate</td>
+                <td>loan.DurationDays</td>
+                <td>loan.PaymentMethod</td>
+                <td>loan.StartDate.ToShortDateString()</td>
+                <td>loan.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+Action("Create", "Loans")">Crear nuevo préstamo</a>

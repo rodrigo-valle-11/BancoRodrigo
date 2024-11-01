@@ -1,0 +1,33 @@
+model IEnumerable<BancoRodrigo.Models.Investment>
+
+<h2>Inversiones</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Monto</th>
+            <th>Tasa de Interés</th>
+            <th>Días de Duración</th>
+            <th>Tipo de Inversión</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Fin</th>
+        </tr>
+    </thead>
+    <tbody>
+        foreach (var investment in Model)
+        {
+            <tr>
+                <td>investment.Id</td>
+                <td>investment.Amount</td>
+                <td>investment.InterestRate</td>
+                <td>investment.DurationDays</td>
+                <td>investment.InvestmentType</td>
+                <td>investment.StartDate.ToShortDateString()</td>
+                <td>investment.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="Url.Action("Create", "Investments")">Crear nueva inversión</a>

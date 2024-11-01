@@ -1,0 +1,27 @@
+model BancoRodrigo.Models.Usuario
+
+{
+    ViewBag.Title = "Registro";
+}
+
+<h2>Registrar Nuevo Usuario</h2>
+
+using (Html.BeginForm("Register", "Auth", FormMethod.Post))
+{
+    if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">Por favor corrige los errores en el formulario.</div>
+    }
+
+    <div class="form-group">
+        <label>Nombre de Usuario</label>
+        <input type="text" name="NombreUsuario" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" name="Contraseña" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Registrar</button>
+}

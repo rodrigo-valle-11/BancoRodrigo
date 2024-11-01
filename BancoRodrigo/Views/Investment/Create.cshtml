@@ -1,0 +1,27 @@
+model BancoRodrigo.Models.Investment
+
+<h2>Crear Inversión</h2>
+
+using (Html.BeginForm())
+{
+    Html.AntiForgeryToken()
+
+    <div>
+        Html.LabelFor(m => m.Amount)
+        Html.TextBoxFor(m => m.Amount)
+    </div>
+    <div>
+        Html.LabelFor(m => m.InterestRate)
+       Html.TextBoxFor(m => m.InterestRate)
+    </div>
+    <div>
+        Html.LabelFor(m => m.DurationDays)
+        Html.TextBoxFor(m => m.DurationDays)
+    </div>
+    <div>
+        Html.LabelFor(m => m.InvestmentType)
+        Html.DropDownListFor(m => m.InvestmentType, new SelectList(new[] { "Corta", "Larga" }))
+    </div>
+
+    <button type="submit">Crear Inversión</button>
+}
